@@ -1,0 +1,28 @@
+# Exercise 1: Sum for each category (not payment type)
+SELECT category, SUM(amount) AS TotalSum
+FROM purchases
+GROUP BY category;
+
+# Exercise 2: Total number (count) of purchases for each category (not the sum of sales)
+SELECT category, COUNT(*) AS PurchaseCount
+FROM purchases
+GROUP BY category;
+
+# Exercise 3: Error is raised when there are not six elements in the tuple
+ 
+# Exercise 4: Sum for categories: "Computers", "Cameras" and "Video Games"
+SELECT category, SUM(amount) AS TotalSum,
+FROM purchases
+WHERE category IN ('Computers', 'Cameras', 'Video Games')
+GROUP BY category;
+
+# Exercise 5: Categories, that have a total number (count) of more than 114 purchases
+SELECT category, COUNT(*) AS PurchaseCount
+FROM purchases
+GROUP BY category
+HAVING COUNT(*) > 114;
+
+# Exercise 6: Averages sales per category
+SELECT category, AVG(amount) AS SalesAverage
+FROM purchases
+GROUP BY category;
